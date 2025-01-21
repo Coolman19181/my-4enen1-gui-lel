@@ -31,12 +31,83 @@ Nameless.BorderSizePixel = 3
 Nameless.Position = UDim2.new(0.0520000011, 0, 0.26953125, 0)
 Nameless.Size = UDim2.new(0, 103, 0, 40)
 Nameless.Font = Enum.Font.SourceSans
-Nameless.Text = "Nameless Admin"
+Nameless.Text = "Thomas"
 Nameless.TextColor3 = Color3.fromRGB(0, 0, 0)
 Nameless.TextSize = 14.000
 Nameless.MouseButton1Down:connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/FD2Team/Nameless-Admin-No-Byfron-Kick/main/Source",true))()
+	 local p = game.Players.LocalPlayer.Character
+local weld = Instance.new("Weld",p.Torso)
+weld.Part0 = p.Torso
+
+local train = Instance.new("Part",p.Torso)
+train.Anchored = true
+train.CanCollide = false
+train.Size = Vector3.new(3,2,6)
+train.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld.Part1 = train
+weld.C1 = CFrame.new(0,0,0) * CFrame.Angles(0,math.rad(180),0)
+train.Anchored = false
+local TrainMesh = Instance.new("SpecialMesh",train)
+TrainMesh.MeshType = Enum.MeshType.FileMesh
+TrainMesh.Scale = Vector3.new(0.020,0.020,0.015)
+TrainMesh.MeshId = "rbxassetid://1"
+TrainMesh.TextureId = "rbxassetid://431017809"
+
+local weld2 = Instance.new("Weld",p.Torso)
+weld2.Part0 = p.Torso
+local Smoke = Instance.new("Part",p.Torso)
+Smoke.Anchored = true
+Smoke.CanCollide = false
+Smoke.Size = Vector3.new(1,1,1)
+Smoke.CustomPhysicalProperties = PhysicalProperties.new(0,0,0,0,0)
+weld2.Part1 = Smoke
+weld2.C1 = CFrame.new(0,-4,3.5)
+Smoke.Anchored = false
+Smoke.Transparency = 1
+
+game.Players:Chat(">hat me 17615406173 >light me 9483 white :hat me 17615406173 :light me 9483 white  ;hat me 17615406173 ;light me 9483 white ")
+
+local Particle = Instance.new("ParticleEmitter",Smoke)
+Particle.Rate = 50
+Particle.Speed = NumberRange.new(30,60)
+Particle.VelocitySpread = 4
+Particle.Texture = "rbxassetid://133619974"
+
+local Light = Instance.new("SpotLight",train)
+Light.Angle = 45
+Light.Brightness = 100
+Light.Face = Enum.NormalId.Back
+Light.Range = 30
+
+p.Humanoid.WalkSpeed = 60
+
+for i,v in pairs(p:GetChildren()) do
+	if v:IsA("Part") then
+		v.Transparency = 1
+	elseif v:IsA("Hat") then
+		v:Destroy()
+	elseif v:IsA("Model") then
+		v:Destroy()
+	end
+end
+
+local function SFX(id) 
+	local s=Instance.new("Sound",p.Torso)
+	s.SoundId = "rbxassetid://"..id
+	s.Volume = 1
+	return s
+end
+
+train.Touched:connect(function(p)
+	-- The kill functionality has been removed
 end)
+
+local Music = SFX(190819252)
+Music.Looped = true
+wait(1)
+Music:Play()
+-- ~CL 2016
+		
 fedoraadmin.Name = "fedora admin"
 fedoraadmin.Parent = ImageLabel
 fedoraadmin.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -86,6 +157,6 @@ _4nn1gui.BorderColor3 = Color3.fromRGB(0, 0, 0)
 _4nn1gui.BorderSizePixel = 0
 _4nn1gui.Size = UDim2.new(0, 248, 0, 56)
 _4nn1gui.Font = Enum.Font.SourceSans
-_4nn1gui.Text = "4nn1 gui"
+_4nn1gui.Text = "4nn1 gui v1"
 _4nn1gui.TextColor3 = Color3.fromRGB(0, 0, 0)
 _4nn1gui.TextSize = 14.000
